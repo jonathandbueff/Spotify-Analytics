@@ -2,7 +2,7 @@
 An app to build creative functions to optimize user experience.
 The app is built using ReactJS framework and code from the Spotify-Project repo.
 
-$ Installation
+# Installation
 1. Clone Repo
 2. Navigate to the folder with package.json
 3. Run: 'npm install'
