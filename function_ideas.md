@@ -10,4 +10,5 @@ Temp playlists to aggregate smaller playlists:
 - A solution would be to combine playlists (or parts of playlists) so the user is able to enjoy songs on multiple playlists without having to switch back and forth.
 
 Reactive Shuffle Playlist:
-- When a user shuffles a playlist, track their mood by figuring out which songs
+- When a user plays a playlist on shuffle and skips a song, have the playlist update (live) the upcoming tracks to filter out similar songs to the one skipped.
+- On demand playlist updating
