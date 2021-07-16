@@ -3,10 +3,10 @@ App is built using the ReactJS framework and code from the Spotify-Project repo.
 Node.js is used to connect to Spotify API and communicate the backend with the React app.
 
 # Installation & Instructions
-1. Open up 2 terminals/shells and navigate to the top-level directory
+1. Open up 2 terminals/shells and navigate to the '/react_project' directory
 2. In one shell,run `npm install` and then `npm run start`
 3. In the other shell, run `node server/index.js`
-4. Navigate to "http://localhost:3000/login"
+4. Navigate to '-http://localhost:3000/login'
 
 
 # Current UI
