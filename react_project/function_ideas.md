@@ -9,6 +9,8 @@ Temp playlists to aggregate smaller playlists:
 - Likewise, songs added at the beginning of a playlist's "lifecycle" might end up being overplayed due to the small playlist size.
 - A solution would be to combine playlists (or parts of playlists) so the user is able to enjoy songs on multiple playlists without having to switch back and forth.
 
+Track historical shifts in music taste
+
 Reactive Shuffle Playlist:
 - When a user plays a playlist on shuffle and skips a song, have the playlist update (live) the upcoming tracks to filter out similar songs to the one skipped.
 - On demand playlist updating
