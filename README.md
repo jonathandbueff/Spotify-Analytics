@@ -6,7 +6,7 @@ Node.js is used to connect to Spotify API and communicate the backend with the R
 1. Open up 2 terminals/shells and navigate to the '/react_project' directory
 2. In one shell,run `npm install` and then `npm run start`
 3. In the other shell, run `node server/index.js`
-4. Navigate to '-http://localhost:3000/login'
+4. Navigate to 'http://localhost:3000/login'
 
 
 # Current UI
