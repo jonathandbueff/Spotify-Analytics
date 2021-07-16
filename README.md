@@ -8,10 +8,6 @@ Node.js is used to connect to Spotify API and communicate the backend with the R
 3. In the other shell, run `node server/index.js`
 4. Navigate to "http://localhost:3000/login"
 
-# Useful Links
-ReactJS: https://reactjs.org/docs/hello-world.html
-Spotify Authorization: https://developer.spotify.com/documentation/general/guides/authorization-guide/
-
 
 # Current UI
 ![image](https://user-images.githubusercontent.com/49885151/124210016-8c187380-da9f-11eb-89b7-1c0541c5defb.png)
@@ -19,4 +15,4 @@ Spotify Authorization: https://developer.spotify.com/documentation/general/guide
 # Useful Links
 ReactJS: https://reactjs.org/docs/hello-world.html
 Spotify Authorization: https://developer.spotify.com/documentation/general/guides/authorization-guide/
-
+Spotify-web-api-node: https://github.com/thelinmichael/spotify-web-api-node

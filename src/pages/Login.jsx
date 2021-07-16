@@ -5,8 +5,18 @@ import OAuthLogin from '../components/OAuthLogin'
 
 
 export default class Login extends React.Component {
-  
+
+  // callAPI() {
+  //   fetch("/login")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }
+  // componentWillMount() {
+  //   this.callAPI();
+  // }
+
   render() {
+
     const bodyStyle = {
       position: "absolute",
       backgroundImage: "url('./media/login_wallpaper.jpeg')",

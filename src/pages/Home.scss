@@ -1,0 +1,41 @@
+.profileImage {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  max-width: calc(75vw / 2);
+  max-height: 35vh;
+}
+.artistImage {
+  position: absolute;
+  top: 50px;
+  right: 25%;
+  max-width: calc(75vw / 2);
+  max-height: 35vh;
+}
+.mainProfileBox {
+  max-width: 75%;
+  margin: 0;
+  list-style-type: none;
+}
+.homeHeader {
+  margin: 0;
+  position: fixed;
+}
+.homeProfile {
+  margin: 0;
+  display: inline-block;
+}
+.sideBarProfile {
+  display: inline-block;
+  width: 25%;
+  position: fixed;
+  right: 0;
+  top: 51px;
+  padding: 0;
+}
+.homefooter {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100vw;
+}

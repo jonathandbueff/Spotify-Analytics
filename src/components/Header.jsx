@@ -8,7 +8,7 @@ export default class Header extends React.Component {
         return (
             <div className="headerStyle">
                 <div className="headerContainer">
-                    <a href="/">
+                    <a href="/login">
                         <a className="linkStyle">Spotify Analytics</a>
                     </a>
                     <div className="dropdown">
