@@ -1,16 +1,22 @@
 # Spotify-Analytics
-An app to build creative functions to optimize user experience.
-The app is built using ReactJS framework and code from the Spotify-Project repo.
+App is built using the ReactJS framework and code from the Spotify-Project repo.
+Node.js is used to connect to Spotify API and communicate the backend with the React app.
 
-# Installation
-1. Clone Repo
-2. Navigate to the folder with package.json
-3. Run: 'npm install'
-4. Run: 'npm run dev'
-5. Navigate to: 'http://localhost:3000/'
+# Installation & Instructions
+1. Open up 2 terminals/shells and navigate to the top-level directory
+2. In one shell,run `npm install` and then `npm run start`
+3. In the other shell, run `node server/index.js`
+4. Navigate to "http://localhost:3000/login"
+
+# Useful Links
+ReactJS: https://reactjs.org/docs/hello-world.html
+Spotify Authorization: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+
 
 # Current UI
 ![image](https://user-images.githubusercontent.com/49885151/124210016-8c187380-da9f-11eb-89b7-1c0541c5defb.png)
 
 # Useful Links
-https://reactjs.org/docs/hello-world.html
+ReactJS: https://reactjs.org/docs/hello-world.html
+Spotify Authorization: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+
