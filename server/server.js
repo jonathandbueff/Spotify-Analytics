@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3456;
+const port = 3000;
 const request = require("request");
 const http = require("http");
 // const mysql = require("mysql");
@@ -29,7 +29,7 @@ app.use(function (req,res ,next){
 //GLOBAL VARIABLES
 let my_client_id = "443fd8dff1c94a5dbb47ffce567416d6";
 let my_client_secret = "627b3c51a2f64de480c69d85916e0b8e";
-let my_redirect_uri = awsinstance + ":3000/home";
+let my_redirect_uri = awsinstance + ":3000/hotestme";
 let tracks_metrics;
 
 //USER PROFILE DATA

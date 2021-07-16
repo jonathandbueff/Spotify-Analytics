@@ -1,0 +1,17 @@
+.loginBtn {
+  position: absolute;
+  align-self: center;
+  background: #1db954;
+  font-family: console, monospace;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 500px;
+  padding: 16px 48px 18px;
+  -webkit-transition: 0.4s;
+  transition-duration: 0.4s;
+}
+.loginBtn:hover {
+  background: black;
+  color: #1db954;
+}
