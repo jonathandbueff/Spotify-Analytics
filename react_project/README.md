@@ -9,6 +9,7 @@ Node.js is used to connect to Spotify API and communicate the backend with the R
 4. Navigate to '-http://localhost:3000/login'
 
 
+
 # Current UI
 ![image](https://user-images.githubusercontent.com/49885151/124210016-8c187380-da9f-11eb-89b7-1c0541c5defb.png)
 
