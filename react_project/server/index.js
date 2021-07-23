@@ -3,9 +3,13 @@
 const express = require("express");
 const cors = require('cors')
 const PORT = process.env.PORT || 3001;
+const bodyParser = require('body-parser');
+
 
 const app = express();
 app.use(cors());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let my_client_id = "443fd8dff1c94a5dbb47ffce567416d6";
@@ -91,9 +95,89 @@ app.get('/callback', (req, res) => {
 });
 
 app.get('/userinfo', async (req, res) => {
-    const me = await spotifyApi.getMe().then((res) => {return res});
+    const me = await spotifyApi.getMe()
+        .then((res) => { return res });
     res.send(me);
 })
+
+app.post('/getAudioFeaturesForTracks', async (req, res) => {
+    const ids = req.body.ids;
+    // var trackInfo = null;
+    const featureForTracks = await spotifyApi.getAudioFeaturesForTracks(ids)
+    .then(function(data) {
+        return data.body;
+    });
+    res.send(featureForTracks);
+})
+
+
+// /* Get Audio Features for a Track */
+// spotifyApi.getAudioFeaturesForTrack('3Qm86XLflmIXVm1wcwkgDK')
+//     .then(function (data) {
+//         console.log(data.body);
+//     }, function (err) {
+//         done(err);
+//     });
+
+// /* Get Audio Analysis for a Track */
+// spotifyApi.getAudioAnalysisForTrack('3Qm86XLflmIXVm1wcwkgDK')
+//     .then(function (data) {
+//         console.log(data.body);
+//     }, function (err) {
+//         done(err);
+//     });
+
+
+app.get('/getPlaylistInfo', async (req, res) => {
+    const playlistInfo = await spotifyApi.getUserPlaylists('jonnnydb')
+        .then((data) => {
+            return data.body.items[3]
+        });
+
+    const playlistTracks = await spotifyApi.getPlaylistTracks('37i9dQZF1EM4NG1Stkrir3', {
+        offset: 1,
+        limit: 100,
+        fields: 'items'
+    }).then((data) => {
+        return data.body;
+    },
+        function (err) {
+            console.log('Something went wrong!', err);
+        }
+    );
+    res.send(playlistTracks)
+})
+
+
+async function getAudioFeatures(trackIds) {
+    var track_lib = [];
+    const trackInfo = await spotifyApi.getAudioFeaturesForTrack(item.track.id)
+        .then(function (data) {
+            return data.body;
+        })
+        .catch(error => console.log(error));
+    track_lib.push({
+        kay: item.track.name,
+        value: data.body
+    })
+}
+
+app.get('/getUserPlaylists', async (req, res) => {
+    const playlistInfo = await spotifyApi.getUserPlaylists('jonnnydb')
+        .then((data) => { return data });
+    res.send(playlistInfo)
+})
+
+app.get('/recentlyPlayedTracks', async (req, res) => {
+    const recentlyPlayedTracks = spotifyApi.getMyRecentlyPlayedTracks({
+        limit: 30
+    }).then(function (data) {
+        return data;
+    }, function (err) {
+        console.log('Something went wrong!', err);
+    });
+    res.send(recentlyPlayedTracks);
+});
 
 
 app.listen(PORT, () => {

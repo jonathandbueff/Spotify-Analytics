@@ -1,7 +1,9 @@
 import React from 'react'
 import './Home.scss'
 import Header from '../components/Header'
-
+import ProfileCard from '../components/ProfileCard'
+import MessagingHub from '../components/MessagingHub'
+import PlaylistAnalysis from '../components/PlaylistAnalysis'
 
 export default class Home extends React.Component {
 
@@ -9,6 +11,8 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       user: null,
+      playlistInfo: null,
+      recentlyPlayed: null,
     }
   }
 
@@ -24,15 +28,59 @@ export default class Home extends React.Component {
       .catch(err => console.log(err));
   }
 
+  getAudioFeatures(playlists) {
+    let ids = playlists.map(item => item.track.id);
+    fetch('http://localhost:3001/getAudioFeaturesForTracks', {
+      method: 'POST',
+      body: JSON.stringify({
+        ids: ids
+      }),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res.audio_features)
+      })
+      .catch(err => console.log(err));
+    //   // console.log(audioFeatures);
+    // })
+  }
+
   render() {
 
     const user = this.state.user;
+    const playlists = this.state.playlistInfo;
+    console.log(playlists);
+    playlists && this.getAudioFeatures(playlists);
+    // const recentlyPlayed = this.state.recentlyPlayed;
+
     return (
       <div>
-        {user ?
-          <p>{user.display_name}</p> :
-          <p>Please login</p>
-        }
+        <Header>
+        </Header>
+        <div className="background-container">
+          {user ?
+            <div className="home-container">
+              <ProfileCard
+                user={user}>
+              </ProfileCard>
+
+              {/* <MessagingHub
+                  user={user}>
+                </MessagingHub> */}
+              <PlaylistAnalysis
+                show={3}
+                user={user}>
+              </PlaylistAnalysis>
+              {/* <div>
+                <Friends>
+
+                </Friends>
+              </div> */}
+            </div> :
+            <p>Please login</p>
+          }
+        </div>
       </div>
     )
   }

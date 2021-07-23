@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.collapsed-icon {
+  position: relative;
+  top: 10px;
+}
+.expanded-icon {
+  position: relative;
+  top: 280px;
+}
+
+.icon {
+  cursor: pointer;
+}
