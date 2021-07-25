@@ -20,7 +20,7 @@ export default class Home extends React.Component {
   // fetches user information at url and then saves it to the state.
   // whenever a property of the state changes, the render function gets called.
   componentDidMount() {
-    fetch('http://localhost:3001/userinfo')
+    fetch('http://localhost:3001/api/userInfo')
       .then(res => res.json())
       .then(response => {
         this.setState({ user: response.body });
@@ -30,7 +30,7 @@ export default class Home extends React.Component {
 
   getAudioFeatures(playlists) {
     let ids = playlists.map(item => item.track.id);
-    fetch('http://localhost:3001/getAudioFeaturesForTracks', {
+    fetch('http://localhost:3001/api/getAudioFeaturesForTracks', {
       method: 'POST',
       body: JSON.stringify({
         ids: ids

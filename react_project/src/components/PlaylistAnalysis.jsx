@@ -14,7 +14,7 @@ export default class PlaylistAnalysis extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3001/getUserPlaylists')
+        fetch('http://localhost:3001/api/getUserPlaylists')
             .then(res => res.json())
             .then(response => {
                 this.setState({ playlists: response.body.items });
