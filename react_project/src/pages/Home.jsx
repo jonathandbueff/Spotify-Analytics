@@ -72,11 +72,9 @@ export default class Home extends React.Component {
                 show={3}
                 user={user}>
               </PlaylistAnalysis>
-              {/* <div>
-                <Friends>
+              {/* <Friends>
 
-                </Friends>
-              </div> */}
+              </Friends> */}
             </div> :
             <p>Please login</p>
           }

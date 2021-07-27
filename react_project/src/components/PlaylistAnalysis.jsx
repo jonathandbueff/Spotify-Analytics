@@ -14,7 +14,7 @@ export default class PlaylistAnalysis extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3001/api/getUserPlaylists')
+        fetch('http://localhost:3001/api/userPlaylists')
             .then(res => res.json())
             .then(response => {
                 this.setState({ playlists: response.body.items });
@@ -76,24 +76,6 @@ export default class PlaylistAnalysis extends React.Component {
                             </div>
                         )}
                     </Carousel>
-                    // <Carousel
-                    //  interval={null}
-                    //  fade>
-                    //     {playlists.map((playlist, index) =>
-                    //         <Carousel.Item key={index}>
-                    //             <img
-                    //                 className="playlist-poster"
-                    //                 src={playlist.images[0].url}
-                    //             />
-                    //             <Carousel.Caption>
-                    //                 <h5>{playlist.name}</h5>
-                    //             </Carousel.Caption>
-
-                    //         </Carousel.Item>
-                    //     )}
-
-                    // </Carousel>
-
                 }
             </div>
         )
